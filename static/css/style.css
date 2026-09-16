@@ -2318,3 +2318,51 @@ body.nav-open {
     padding: 0.5rem 1rem;
   }
 }
+/* ---------- Shared content helpers ---------- */
+
+/* Spacing when several lead paragraphs stack in one section. */
+.lead-text + .lead-text {
+  margin-top: 1.5rem;
+}
+
+/* Two-up variant of the values grid (base grid is fixed at 3 columns). */
+.values-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Base call-to-action styling for pages that don't load events.css.
+   events.css defines its own richer version and loads afterwards. */
+.cta-content {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin: 0 auto 2rem;
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .values-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content h2 {
+    font-size: 1.85rem;
+  }
+}
+
+/* Attribution line under a body-copy section; aligns with .lead-text column. */
+.section-byline {
+  max-width: 800px;
+  margin: 1.75rem auto 0;
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.8;
+}

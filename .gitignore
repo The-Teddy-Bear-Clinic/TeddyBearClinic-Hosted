@@ -41,3 +41,8 @@ instance/
 # OS
 .DS_Store
 Thumbs.db
+
+# Full-resolution photo originals. Web-optimized copies are committed under
+# "static/assets/Teddy Bear Clinic 2026/"; the originals stay local so they
+# don't bloat the repo or the GitHub Pages deploy.
+static/assets/TBC 2026/

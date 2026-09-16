@@ -167,19 +167,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', handleResize, { passive: true });
 
-    // ===== BUILD IMAGES ARRAY (cached) =====
-    let galleryArrayBuilt = false;
+    // ===== BUILD IMAGES ARRAY =====
+    // Scoped to the year section currently on screen, so the lightbox arrows
+    // don't wander into a year the visitor isn't looking at.
+    let activeItems = [];
     function buildGalleryArray() {
-        if (galleryArrayBuilt) return;
+        const activeSection = document.querySelector('.gallery-year-section.active');
+        const scope = activeSection || document;
+        activeItems = Array.from(scope.querySelectorAll('.gallery-item'));
         galleryImages = [];
-        galleryItems.forEach(function(item) {
+        activeItems.forEach(function(item) {
             const img = item.querySelector('img');
             const src = item.getAttribute('data-fullres') || img?.dataset.src || img?.src;
             if (src && src !== 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') {
                 galleryImages.push(src);
             }
         });
-        galleryArrayBuilt = true;
     }
 
     // ===== LIGHTBOX =====
@@ -246,8 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const item = e.target.closest('.gallery-item');
         if (item) {
             e.preventDefault();
-            const items = Array.from(galleryItems);
-            const idx = items.indexOf(item);
+            buildGalleryArray();
+            const idx = activeItems.indexOf(item);
             if (idx !== -1) openLightbox(idx);
         }
     });
@@ -311,6 +314,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, { passive: true });
     }
+
+    // ===== YEAR TABS =====
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const yearSections = document.querySelectorAll('.gallery-year-section');
+
+    yearTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            const year = tab.dataset.year;
+
+            yearTabs.forEach(function(t) {
+                t.classList.toggle('active', t === tab);
+            });
+            yearSections.forEach(function(section) {
+                section.classList.toggle('active', section.dataset.year === year);
+            });
+
+            // Carousels in a hidden section measure as zero width, so re-run
+            // the nav-button sizing now that this one is on screen.
+            window.dispatchEvent(new Event('resize'));
+            buildGalleryArray();
+        });
+    });
 
     // Initialize
     buildGalleryArray();
