@@ -201,3 +201,31 @@
 .page-expansion .footer-bottom {
   border-top-color: rgba(159, 211, 203, 0.25);
 }
+
+/* Placeholder shown until the book cover image is added.
+   Remove this rule once the real cover is in place. */
+.page-expansion .book-cover-pending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 320px;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  background: var(--theme-surface);
+  border: 2px dashed var(--theme-primary);
+  color: var(--theme-text);
+}
+
+.page-expansion .book-cover-pending i {
+  font-size: 3rem;
+  color: var(--theme-primary);
+}
+
+.page-expansion .book-cover-pending p {
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.75;
+}
