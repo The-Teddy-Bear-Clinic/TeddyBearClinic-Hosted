@@ -109,6 +109,11 @@
 .gallery-year-section {
   padding: 3rem 0 4rem;
   background: var(--theme-bg);
+  display: none;
+}
+
+.gallery-year-section.active {
+  display: block;
 }
 
 .year-title {
