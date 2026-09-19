@@ -744,7 +744,7 @@ nav {
   display: block;
   width: 28px;
   height: 3px;
-  background: var(--primary);
+  background: var(--theme-primary, var(--primary));
   border-radius: 3px;
   position: relative;
   transition: background 0.3s;
@@ -757,7 +757,7 @@ nav {
   left: 0;
   width: 28px;
   height: 3px;
-  background: var(--primary);
+  background: var(--theme-primary, var(--primary));
   border-radius: 3px;
   transition:
     transform 0.3s,
@@ -859,7 +859,7 @@ nav {
 
   .nav-links li {
     width: 100%;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--theme-border, var(--border));
     list-style: none;
   }
 
