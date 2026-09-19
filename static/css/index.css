@@ -90,6 +90,14 @@ body>section.hero.hero-palette-home {
   background: linear-gradient(90deg, #8fbcb5, var(--theme-primary));
 }
 
+/* Center labels even when a neighboring button wraps onto two lines. */
+.page-home .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
 .page-home .btn:not(.btn-outline) {
   background: var(--theme-primary);
 }
@@ -342,13 +350,6 @@ body>section.hero.hero-palette-home {
   background: transparent !important;
   border: 2px solid var(--theme-primary);
   color: var(--theme-primary) !important;
-  min-width: 140px;
-  padding: 0.75rem 1.75rem;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-decoration: none;
-  text-align: center;
 }
 
 .page-home .btn-outline:hover {
