@@ -2,11 +2,11 @@
 
 /* Theme variables */
 .page-contact {
-  --theme-primary: #c88060;
-  --theme-hover: #d8a080;
+  --theme-primary: #914d2b;
+  --theme-hover: #773c22;
   --theme-light: #e8b89c;
-  --theme-text: #a06040;
-  --theme-dark: #8a5030;
+  --theme-text: #78482f;
+  --theme-dark: #693820;
   --theme-bg: #fef8f4;
   --theme-bg-hero: #fef8f4;
   --theme-surface: #fcf0e8;
@@ -121,8 +121,12 @@
 }
 
 /* Social icon styles */
+.page-contact .social-icon i {
+  color: var(--text-light);
+}
+
 .page-contact .social-icon {
-  background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-primary) 100%);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-hover) 100%);
   border-color: var(--theme-primary);
 }
 
@@ -220,7 +224,7 @@
 .page-contact select {
   background-color: var(--theme-bg);
   color: var(--theme-text);
-  border: 1px solid var(--theme-border);
+  border: 1px solid var(--theme-primary);
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 1rem;
@@ -240,7 +244,8 @@
 
 /* Placeholder text */
 .page-contact .contact-form ::placeholder {
-  color: rgba(199, 73, 115, 0.6);
+  color: var(--theme-text);
+  opacity: 1;
 }
 
 /* Alt background */
@@ -318,7 +323,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-primary) 100%);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-hover) 100%);
   color: var(--text-light);
   border-radius: 50%;
   font-size: 0.9rem;
@@ -511,8 +516,8 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--text);
-  opacity: 0.5;
+  color: var(--theme-text);
+  opacity: 1;
 }
 
 /* Select wrapper for arrow animation */

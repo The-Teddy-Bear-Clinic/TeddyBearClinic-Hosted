@@ -2,9 +2,9 @@
 
 /* Theme variables - Lavender/Purple pastel palette */
 .page-gallery {
-  --theme-primary: #9b7bb8;
-  --theme-hover: #7d5a9e;
-  --theme-light: #c4a8d8;
+  --theme-primary: #704b91;
+  --theme-hover: #583772;
+  --theme-light: #d8c5e8;
   --theme-text: #4a3a5a;
   --theme-dark: #5d4777;
   --theme-bg: #f8f4fc;
@@ -87,7 +87,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   background: transparent;
-  border: 2px solid var(--theme-border);
+  border: 2px solid var(--theme-primary);
   border-radius: 50px;
   color: var(--theme-text);
   cursor: pointer;
@@ -401,7 +401,7 @@
   transform: translateY(-50%);
   font-size: 1.5rem;
   color: white;
-  background: rgba(155, 123, 184, 0.6);
+  background: var(--theme-hover);
   border: none;
   border-radius: 50%;
   width: 50px;

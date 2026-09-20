@@ -2,13 +2,13 @@
 
 /* Theme variables */
 .page-about {
-  --theme-primary: #c47a7a;
-  --theme-hover: #d4a5b9;
+  --theme-primary: #873e48;
+  --theme-hover: #753441;
   --theme-light: #e8a0a0;
-  --theme-text: #8a5a5a;
-  --theme-dark: #8a4a5a;
+  --theme-text: #75464b;
+  --theme-dark: #6b3444;
   --theme-bg: #fef6f6;
-  --theme-bg-hero: rgb(186, 227, 235);
+  --theme-bg-hero: #fef6f6;
   --theme-surface: #fceaea;
   --theme-border: #e8c0c0;
 }

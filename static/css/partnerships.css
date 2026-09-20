@@ -3,10 +3,10 @@
 /* Theme variables - Pastel Lavender */
 
 .page-partnerships {
-  --theme-primary: #d3bbff;
-  /* soft pastel lavender */
-  --theme-hover: #bea4f6;
-  /* slightly deeper lavender for hover */
+  --theme-primary: #69438c;
+  /* dark lavender for text and white button labels */
+  --theme-hover: #50316d;
+  /* deeper lavender for hover states */
   --theme-light: #f3ebff;
   /* very soft lavender highlight */
   --theme-text: #4b3a5a;
@@ -127,7 +127,7 @@
 }
 
 .page-partnerships .section-title::after {
-  background: linear-gradient(90deg, #8fbcb5, var(--theme-primary));
+  background: linear-gradient(90deg, var(--theme-light), var(--theme-primary));
 }
 
 /* Alternating background */
@@ -374,7 +374,7 @@
 .partner-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-primary) 100%);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-hover) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -476,7 +476,7 @@
   flex-shrink: 0;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-primary) 100%);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-hover) 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -571,7 +571,7 @@
 .partnership-form textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid var(--theme-border);
+  border: 2px solid var(--theme-primary);
   border-radius: 10px;
   font-size: 1rem;
   font-family: inherit;

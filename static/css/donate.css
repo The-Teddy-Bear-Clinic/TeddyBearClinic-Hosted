@@ -2,8 +2,8 @@
 
 /* Theme variables - Coral/Rose theme */
 .page-donate {
-  --theme-primary: #e07a5f;
-  --theme-hover: #c96a52;
+  --theme-primary: #a43f2b;
+  --theme-hover: #88301f;
   --theme-light: #f4a896;
   --theme-text: #5c4742;
   --theme-dark: #3d2c29;
@@ -99,7 +99,7 @@
   border: 2px solid var(--theme-primary);
 }
 .page-donate .btn-outline:hover {
-  background: rgba(196, 162, 76, 0.1);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
   color: var(--theme-dark);
 }
 
@@ -195,13 +195,13 @@
   box-shadow: 0 12px 40px rgba(224, 122, 95, 0.25);
 }
 .page-donate .mission-card h3 {
-  color: #5a4a20;
+  color: var(--theme-dark);
 }
 .page-donate .mission-card p {
-  color: #4a4a4a;
+  color: var(--theme-text);
 }
 .page-donate .mission-card .card-icon {
-  background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-primary) 100%);
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-hover) 100%);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -229,7 +229,7 @@
   color: var(--theme-light);
 }
 .page-donate .footer-bottom {
-  border-top-color: rgba(232, 212, 156, 0.2);
+  border-top-color: color-mix(in srgb, var(--theme-border) 20%, transparent);
 }
 
 /* Donate Gallery Styles */

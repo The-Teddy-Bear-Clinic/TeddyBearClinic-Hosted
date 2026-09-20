@@ -3,10 +3,10 @@
 /* Theme variables - Pastel Pinks */
 .page-merchandise {
   --theme-primary: #bd2b41;
-  --theme-hover: #f1c4cc;
+  --theme-hover: #8f1f38;
   --theme-light: #ffc7c1;
-  --theme-text: #c74973;
-  --theme-dark: rgb(209, 87, 128);
+  --theme-text: #923750;
+  --theme-dark: #64273e;
   --theme-bg: #fff5f5;
   --theme-bg-hero: #ffe4e1;
   --theme-surface: #fef0f0;

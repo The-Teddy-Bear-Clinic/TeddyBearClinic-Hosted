@@ -9,6 +9,7 @@
   /* slightly deeper teal for hover states */
   --theme-light: #e0fafb;
   /* very light pastel teal for highlights */
+  --theme-link: var(--theme-dark); /* Readable accent on pale teal surfaces */
   --theme-text: #4b5563;
   /* dark grey for readability */
   --theme-dark: #1f2937;
@@ -72,12 +73,12 @@
 }
 
 .nav-links li>a:hover {
-  color: var(--theme-primary);
+  color: var(--theme-dark);
 }
 
 .dropdown-menu {
   background: var(--theme-bg-hero);
-  border-color: var(--theme-primary);
+  border-color: var(--theme-dark);
 }
 
 .dropdown-menu a {
@@ -86,11 +87,11 @@
 
 .dropdown-menu a:hover {
   background: linear-gradient(90deg, rgba(96, 90, 87, 0.15), rgba(119, 115, 113, 0.25));
-  color: var(--theme-primary);
+  color: var(--theme-dark);
 }
 
 .dropdown>a::after {
-  border-top-color: var(--theme-primary);
+  border-top-color: var(--theme-dark);
 }
 
 .btns .btn {
@@ -219,7 +220,7 @@
 }
 
 .event-meta i {
-  color: var(--theme-primary);
+  color: var(--theme-dark);
   margin-right: 0.5rem;
   width: 20px;
 }
@@ -250,7 +251,7 @@
 }
 
 .highlight-item i {
-  color: var(--theme-primary);
+  color: var(--theme-dark);
 }
 
 .event-cta {
@@ -424,7 +425,7 @@
 }
 
 .location-info h3 i {
-  color: var(--theme-primary);
+  color: var(--theme-dark);
   margin-right: 0.5rem;
 }
 
@@ -445,7 +446,7 @@
 }
 
 .location-details i {
-  color: var(--theme-primary);
+  color: var(--theme-dark);
   width: 24px;
   margin-right: 0.5rem;
 }
@@ -470,7 +471,7 @@
 
 .map-placeholder i {
   font-size: 3rem;
-  color: var(--theme-primary);
+  color: var(--theme-dark);
   margin-bottom: 1rem;
 }
 

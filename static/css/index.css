@@ -2,9 +2,9 @@
 
 /* Theme variables */
 .page-home {
-  --theme-primary: #4a8ab8;
-  --theme-hover: #6aa8c8;
-  --theme-light: #7eb8da;
+  --theme-primary: #28618a;
+  --theme-hover: #214f70;
+  --theme-light: #b5d4e8;
   --theme-text: #3a6a8a;
   --theme-dark: #2a5a7a;
   --theme-bg: #f0f7fc;
@@ -14,7 +14,7 @@
 }
 
 /* Hero palette */
-.hero-palette-story {
+.hero-palette-home {
   background: var(--theme-bg-hero, #f0f7fc);
 }
 
@@ -87,7 +87,7 @@ body>section.hero.hero-palette-home {
 }
 
 .page-home .section-title::after {
-  background: linear-gradient(90deg, #8fbcb5, var(--theme-primary));
+  background: linear-gradient(90deg, var(--theme-light), var(--theme-primary));
 }
 
 /* Center labels even when a neighboring button wraps onto two lines. */
@@ -269,7 +269,7 @@ body>section.hero.hero-palette-home {
 
 /* Footer styles */
 .page-home .footer-section h4 {
-  color: #a8d4b8;
+  color: var(--theme-light);
 }
 
 .page-home .footer-section p i {
