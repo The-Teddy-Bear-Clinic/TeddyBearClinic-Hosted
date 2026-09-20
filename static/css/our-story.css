@@ -2,9 +2,9 @@
 
 /* Theme variables */
 .page-story {
-  --theme-primary: #4a7c59;
-  --theme-hover: #5c7a5c;
-  --theme-light: #81b08b;
+  --theme-primary: #3d6849;
+  --theme-hover: #30563c;
+  --theme-light: #b6d4bb;
   --theme-text: #3d5c44;
   --theme-dark: #2d4a34;
   --theme-bg: #f8f5e6;
@@ -15,19 +15,30 @@
 
 
 /* Hero palette */
-.hero-palette-home {
-  background: #fdf6e3;
+.hero-palette-story {
+  background: var(--theme-bg-hero);
 }
 
-/* Hero adjustments */
-.page-events .hero h1 {
-  color: var(--theme-dark);
+.hero-palette-story .blob-1,
+.hero-palette-story .blob-5 {
+  --blob-color: var(--theme-light);
 }
 
-.page-events .hero-subtitle {
-  color: var(--theme-text);
+.hero-palette-story .blob-2,
+.hero-palette-story .blob-6 {
+  --blob-color: var(--theme-border);
 }
 
+.hero-palette-story .blob-3,
+.hero-palette-story .blob-7 {
+  --blob-color: color-mix(in srgb, var(--theme-light) 70%, var(--theme-bg));
+}
+
+.hero-palette-story .blob-4,
+.hero-palette-story .blob-8,
+.hero-palette-story .blob-9 {
+  --blob-color: color-mix(in srgb, var(--theme-light) 85%, var(--theme-primary));
+}
 
 /* Navigation styles */
 .page-story nav {
@@ -53,7 +64,7 @@
   color: var(--theme-text);
 }
 
-.page-home .dropdown-menu a:hover {
+.page-story .dropdown-menu a:hover {
   background: linear-gradient(90deg, rgba(74, 124, 89, 0.2), rgba(129, 176, 139, 0.3));
   color: var(--theme-primary);
 }
@@ -106,7 +117,7 @@
 }
 
 .page-story .btn-outline:hover {
-  background: rgba(74, 138, 184, 0.1);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
   color: var(--theme-dark);
 }
 
@@ -188,9 +199,12 @@
   color: var(--theme-text);
 }
 
-.story-text p,
-.story-text h3 {
+.page-story .story-text p {
   color: var(--theme-text);
+}
+
+.page-story .story-text h3 {
+  color: var(--theme-primary);
 }
 
 .page-story .founder-signature {
@@ -225,7 +239,7 @@
   top: 0;
   width: 20px;
   height: 20px;
-  background-color: #4CAF50;
+  background-color: var(--theme-primary);
   /* green circle for each year */
   border-radius: 50%;
   border: 3px solid #ffffff;
@@ -235,30 +249,22 @@
 .timeline-year {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #2e7d32;
+  color: var(--theme-primary);
   /* dark green for year text */
   margin-bottom: 0.5rem;
 }
 
 .timeline-content h4 {
-  color: #1b5e20;
+  color: var(--theme-dark);
   /* darker green for headings */
 }
 
 .timeline-content p {
-  color: #2e7d32;
+  color: var(--theme-text);
   /* medium green for paragraph text */
 }
 
 
-
-.page-home .story-text h3 {
-  color: var(--theme-hover);
-}
-
-.page-home .story-text p {
-  color: var(--theme-text);
-}
 
 /* Footer styles */
 .page-story .site-footer {
@@ -278,26 +284,13 @@
 }
 
 .page-story .footer-bottom {
-  border-top-color: rgba(126, 184, 218, 0.2);
+  border-top-color: color-mix(in srgb, var(--theme-border) 20%, transparent);
 }
 
-.page-home .section-title {
-  color: var(--theme-primary);
-}
-
-.page-home .section-title::after {
-  background: linear-gradient(90deg, #8fbcb5, var(--theme-primary));
-}
-
-.founder-text h3 {
+.page-story .founder-text h3 {
   color: var(--theme-dark);
-  ;
 }
 
-.founder-text p {
+.page-story .founder-text p {
   color: var(--theme-text);
-}
-
-.page-home .founder-signature {
-  color: var(--theme-dark);
 }

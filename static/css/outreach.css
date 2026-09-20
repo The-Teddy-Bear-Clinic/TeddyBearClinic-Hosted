@@ -8,8 +8,9 @@
   --theme-primary: #F5EC59;   /* Warm community yellow */
   --theme-hover: #EFE27C;     /* Softer hover yellow */
   --theme-light: #FBF7C8;     /* Pastel highlight */
+  --theme-link: var(--theme-dark); /* Readable accent on pale yellow surfaces */
 
-    --theme-text: #919182;
+    --theme-text: #625d30;
     --theme-dark: #3F3E1F;
 
   /* Backgrounds */
@@ -87,7 +88,7 @@
 }
 
 .page-community-outreach .dropdown > a::after {
-  border-top-color: var(--theme-primary);
+  border-top-color: var(--theme-dark);
 }
 
 .page-community-outreach .btns .btn {
@@ -143,7 +144,7 @@
 .page-community-outreach .btn-outline {
   background: transparent;
   color: var(--theme-dark);
-  border: 2px solid var(--theme-primary);
+  border: 2px solid var(--theme-dark);
 }
 
 .page-community-outreach .btn-outline:hover {

@@ -35,7 +35,8 @@
 
 /* Past event badge styling */
 .past-event-badge {
-    background: #6b7280 !important;
+    background: var(--theme-text) !important;
+    color: var(--text-light);
 }
 
 /* Text center utility */

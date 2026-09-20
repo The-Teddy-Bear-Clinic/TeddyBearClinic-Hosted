@@ -5,14 +5,15 @@
   --surface: #ffffff;
   --primary: #03045e;
   --secondary: #0077b6;
-  --accent: rgb(23, 155, 182);
+  --accent: #08687d;
   --accent-hover: #48cae4;
   --text: #03045e;
   --text-light: #ffffff;
   --border: #90e0ef;
 }
 
-/* NOTE: Page-specific theme variables have been moved to individual page CSS files */
+/* Page themes pair dark text/controls with pastel surfaces.
+   Check text and hover colors on each surface; pastel buttons use dark labels. */
 
 * {
   margin: 0;
@@ -30,7 +31,30 @@ html {
 }
 
 body {
+  /* Shared components inherit the current page's palette. */
+  --bg: var(--theme-bg, #ade8f4);
+  --primary: var(--theme-dark, #03045e);
+  --secondary: var(--theme-text, #0077b6);
+  --accent: var(--theme-link, var(--theme-primary, #08687d));
+  --accent-hover: var(--theme-light, #48cae4);
+  --text: var(--theme-text, #03045e);
+  --border: var(--theme-border, #90e0ef);
+  --dark: var(--theme-dark, #03045e);
+
   font-family: "Momo Trust Display", sans-serif;
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--primary);
 }
 
 /* Font Awesome Icon Styling */
@@ -53,7 +77,7 @@ body {
 .event-time i,
 .event-location i {
   margin-right: 0.5rem;
-  color: #5c7a5c;
+  color: var(--secondary);
 }
 
 .footer-section p i {
@@ -66,9 +90,9 @@ nav {
   padding: 1.5rem 5%;
   min-height: 84px;
   background: var(--theme-surface);
-  border-bottom: 1px solid #90e0ef33;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
   backdrop-filter: blur(15px);
-  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.08);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 8%, transparent);
   margin-bottom: 0;
   position: relative;
   z-index: 100;
@@ -131,8 +155,8 @@ nav {
   min-width: 200px;
   padding: 0.5rem 0;
   box-shadow:
-    0 8px 32px rgba(0, 180, 216, 0.15),
-    0 4px 16px rgba(3, 4, 94, 0.1);
+    0 8px 32px color-mix(in srgb, var(--accent) 15%, transparent),
+    0 4px 16px color-mix(in srgb, var(--primary) 10%, transparent);
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(-10px);
@@ -158,7 +182,7 @@ nav {
 }
 
 .dropdown-menu a:hover {
-  background: linear-gradient(90deg, rgba(173, 232, 244, 0.3) 0%, rgba(72, 202, 228, 0.2) 100%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--bg) 30%, transparent) 0%, color-mix(in srgb, var(--accent-hover) 20%, transparent) 100%);
   color: var(--accent);
   padding-left: 2rem;
   padding-right: 1rem;
@@ -615,14 +639,14 @@ nav {
 .hero .btn {
   background: var(--primary);
   color: var(--text-light);
-  box-shadow: 0 8px 30px rgba(3, 4, 94, 0.25);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--primary) 25%, transparent);
 }
 
 .hero .btn:hover {
   background: var(--secondary);
   color: var(--text-light);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(3, 4, 94, 0.3);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
 .hero .btn-outline {
@@ -633,7 +657,7 @@ nav {
 }
 
 .hero .btn-outline:hover {
-  background: rgba(3, 4, 94, 0.1);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
   border-color: var(--secondary);
   color: var(--secondary);
 }
@@ -663,7 +687,7 @@ nav {
   background: var(--theme-surface);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 180, 216, 0.12);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 12%, transparent);
   border: 2px solid var(--theme-primary);
 }
 
@@ -677,7 +701,7 @@ nav {
   border-radius: 16px;
   padding: 1.5rem 2rem;
   min-width: 120px;
-  box-shadow: 0 4px 16px rgba(3, 4, 94, 0.2);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 20%, transparent);
 }
 
 .event-month {
@@ -744,7 +768,7 @@ nav {
   display: block;
   width: 28px;
   height: 3px;
-  background: var(--theme-primary, var(--primary));
+  background: var(--theme-text, var(--text));
   border-radius: 3px;
   position: relative;
   transition: background 0.3s;
@@ -757,7 +781,7 @@ nav {
   left: 0;
   width: 28px;
   height: 3px;
-  background: var(--theme-primary, var(--primary));
+  background: var(--theme-text, var(--text));
   border-radius: 3px;
   transition:
     transform 0.3s,
@@ -847,7 +871,7 @@ nav {
     flex-direction: column;
     padding: 5rem 1.5rem 2rem;
     gap: 0;
-    box-shadow: -4px 0 30px rgba(3, 4, 94, 0.15);
+    box-shadow: -4px 0 30px color-mix(in srgb, var(--primary) 15%, transparent);
     transition: right 0.35s ease;
     overflow-y: auto;
     z-index: 9999;
@@ -896,7 +920,7 @@ nav {
     padding: 0;
     border: none;
     box-shadow: none;
-    background: rgba(173, 232, 244, 0.4);
+    background: color-mix(in srgb, var(--bg) 40%, transparent);
     border-radius: 8px;
     transition:
       max-height 0.3s ease,
@@ -1324,7 +1348,7 @@ body.nav-open {
   border-radius: 20px;
   padding: 2.5rem;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.1);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 10%, transparent);
   transition:
     transform 0.3s,
     box-shadow 0.3s;
@@ -1332,7 +1356,7 @@ body.nav-open {
 
 .mission-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.2);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .card-icon {
@@ -1381,7 +1405,7 @@ body.nav-open {
 }
 
 .feature-item:hover {
-  background: linear-gradient(135deg, rgba(173, 232, 244, 0.3) 0%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--bg) 30%, transparent) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .feature-icon {
@@ -1412,7 +1436,7 @@ body.nav-open {
   background: var(--bg);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.1);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 10%, transparent);
   transition: transform 0.3s;
 }
 
@@ -1548,7 +1572,7 @@ body.nav-open {
   padding: 1.5rem 2.5rem;
   border-radius: 12px;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.1);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .publication-item p {
@@ -1715,14 +1739,14 @@ body.nav-open {
   background: var(--surface);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.1);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 10%, transparent);
   border: 2px solid var(--theme-surface);
   transition: all 0.3s;
 }
 
 .team-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.2);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .team-image {
@@ -1799,14 +1823,14 @@ body.nav-open {
 }
 
 .stat-item {
-  background: linear-gradient(135deg, var(--surface) 0%, rgba(173, 232, 244, 0.3) 100%);
+  background: linear-gradient(135deg, var(--surface) 0%, color-mix(in srgb, var(--bg) 30%, transparent) 100%);
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   text-align: center;
   border: 2px solid var(--border);
   flex: 0 0 auto;
   min-width: 150px;
-  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.12);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 12%, transparent);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -1824,7 +1848,7 @@ body.nav-open {
 
 .stat-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.2);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 20%, transparent);
   border-color: var(--accent);
 }
 
@@ -1902,7 +1926,7 @@ body.nav-open {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 8px 32px rgba(0, 180, 216, 0.12);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 12%, transparent);
   border: 2px solid var(--border);
 }
 
@@ -1934,6 +1958,13 @@ body.nav-open {
   flex: 0 0 350px;
 }
 
+img.mission-vision-image {
+  display: block;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+}
+
 .mission-vision-image .image-placeholder {
   min-height: 280px;
   border-radius: 20px;
@@ -1946,6 +1977,10 @@ body.nav-open {
   height: 100%;
   min-height: 280px;
   object-fit: cover;
+}
+
+.mission-vision-image .image-placeholder img,
+img.mission-vision-image {
   border-radius: 20px;
 }
 
@@ -1954,7 +1989,7 @@ body.nav-open {
   background: var(--surface);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 180, 216, 0.12);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 12%, transparent);
   border: 2px solid var(--theme-primary);
 }
 
@@ -1980,7 +2015,7 @@ body.nav-open {
 
 .value-card:hover {
   border-color: var(--theme-hover);
-  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.15);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 .value-card .card-icon {
@@ -2364,5 +2399,5 @@ body.nav-open {
   margin: 1.75rem auto 0;
   font-style: italic;
   font-weight: 600;
-  opacity: 0.8;
+  color: var(--text);
 }

@@ -3,15 +3,15 @@
    ================================ */
 
 .page-expansion {
-  --theme-primary: #BFD84A;   
-  --theme-hover: #D9E37A;
-  --theme-light: #EEF4C9;     
-  --theme-border: #D6DEA6;    
-  --theme-text: #5E6F2E;      
-  --theme-dark: #3E4B1A;      
-  --theme-bg: #FBFDF3;        
-  --theme-bg-hero: #F4F8E2;   
-  --theme-surface: #F0F5D8;   
+  --theme-primary: #52691d;
+  --theme-hover: #405316;
+  --theme-light: #EEF4C9;
+  --theme-border: #D6DEA6;
+  --theme-text: #4b5928;
+  --theme-dark: #3E4B1A;
+  --theme-bg: #FBFDF3;
+  --theme-bg-hero: #F4F8E2;
+  --theme-surface: #F0F5D8;
 }
 
 .hero-palette-expansion {
@@ -46,8 +46,8 @@
 
 .page-expansion nav {
   background: var(--theme-bg-hero);
-  border-bottom-color: rgba(107, 176, 166, 0.25);
-  box-shadow: 0 4px 20px rgba(107, 176, 166, 0.08);
+  border-bottom-color: color-mix(in srgb, var(--theme-primary) 25%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--theme-primary) 8%, transparent);
 }
 
 .page-expansion .nav-links li > a {
@@ -70,8 +70,8 @@
 .page-expansion .dropdown-menu a:hover {
   background: linear-gradient(
     90deg,
-    rgba(107, 176, 166, 0.15),
-    rgba(159, 211, 203, 0.25)
+    color-mix(in srgb, var(--theme-light) 35%, transparent),
+    color-mix(in srgb, var(--theme-light) 65%, transparent)
   );
   color: var(--theme-primary);
 }
@@ -137,7 +137,7 @@
 }
 
 .page-expansion .btn-outline:hover {
-  background: rgba(107, 176, 166, 0.1);
+  background: color-mix(in srgb, var(--theme-primary) 10%, transparent);
   color: var(--theme-dark);
 }
 
@@ -199,5 +199,5 @@
 }
 
 .page-expansion .footer-bottom {
-  border-top-color: rgba(159, 211, 203, 0.25);
+  border-top-color: color-mix(in srgb, var(--theme-primary) 25%, transparent);
 }
