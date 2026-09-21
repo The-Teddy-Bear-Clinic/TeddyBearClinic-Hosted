@@ -107,15 +107,19 @@ nav {
   width: 160px;
   flex: 0 0 160px;
   display: block;
+  color: var(--text);
 }
 
+/* Keep the themed letters and bear artwork aligned. The bears use an img
+   so Safari resolves the SVG masks and filters inside their own document. */
+.logo svg,
 .logo img {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   height: 130px;
-  width: auto;
+  width: 130px;
   display: block;
 }
 
@@ -957,7 +961,9 @@ nav {
     flex: 0 0 120px;
   }
 
+  .logo svg,
   .logo img {
+    width: 90px;
     height: 90px;
   }
 
@@ -1105,7 +1111,9 @@ nav {
     flex: 0 0 100px;
   }
 
+  .logo svg,
   .logo img {
+    width: 70px;
     height: 70px;
   }
 
