@@ -53,10 +53,6 @@ a {
   color: var(--accent);
 }
 
-a:hover {
-  color: var(--primary);
-}
-
 /* Font Awesome Icon Styling */
 .contact-icon i,
 .card-icon i,
