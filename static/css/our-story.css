@@ -224,7 +224,6 @@
 /* Our Journey Section - Green Color Scheme*/
 
 .timeline-item {
-  /* Remove vertical line */
   border-left: none;
   margin-bottom: 2rem;
   padding-left: 1.5rem;
@@ -234,8 +233,8 @@
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: 0;
-  /* adjust to align with text */
+  /* Use the shared desktop/mobile offsets and center on the 4px line. */
+  transform: translateX(calc(2px - 50%));
   top: 0;
   width: 20px;
   height: 20px;
